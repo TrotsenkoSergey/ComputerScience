@@ -43,6 +43,7 @@ internal class Program
         Console.WriteLine($"Mid: {counts.Sum() / iteration}");
         */
 
+        var maxAverageSubarrayISolution = new SlidingWindow.MaximumAverageSubarrayI();
+        double maxAverageSubarrayI = maxAverageSubarrayISolution.FindMaxAverage([1, 12, -5, -6, 50, 3],4);;
     }
-
 }
