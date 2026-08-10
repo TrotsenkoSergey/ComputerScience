@@ -23,12 +23,17 @@ public class HasPathSolution
 
     // Time: O(e)
     // Space: O(n)
+
+    private readonly HashSet<char> _visited = [];
     public bool HasDFSPath(Dictionary<char, List<char>> graph, char src, char dst)
     {
         if (src == dst) return true;
 
         foreach (char neighbor in graph[src])
         {
+            if (_visited.Contains(neighbor)) return false;
+            _visited.Add(neighbor);
+
             if (HasDFSPath(graph, neighbor, dst))
                 return true;
         }
@@ -39,7 +44,7 @@ public class HasPathSolution
     public bool HasBFSPath(Dictionary<char, List<char>> graph, char src, char dst)
     {
         if (src == dst) return true;
-        
+
         // realize
 
         return false;
